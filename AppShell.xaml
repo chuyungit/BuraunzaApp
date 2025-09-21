@@ -9,19 +9,19 @@
 
     <!-- 底部标签栏导航 -->
     <TabBar>
-        <Tab Title="主页" Icon="home.svg">
+        <Tab Title="主页" Icon="🏠">
             <ShellContent
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="MainPage" />
         </Tab>
         
-        <Tab Title="设置" Icon="settings.svg">
+        <Tab Title="设置" Icon="⚙️">
             <ShellContent
                 ContentTemplate="{DataTemplate local:SettingsPage}"
                 Route="SettingsPage" />
         </Tab>
         
-        <Tab Title="关于" Icon="info.svg">
+        <Tab Title="关于" Icon="ℹ️">
             <ShellContent
                 ContentTemplate="{DataTemplate local:AboutPage}"
                 Route="AboutPage" />

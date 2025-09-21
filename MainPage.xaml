@@ -91,14 +91,16 @@
                                ReturnType="Go"
                                Completed="OnUrlEntered"
                                FontSize="14"/>
-                        <ImageButton Grid.Column="1"
-                                   Source="search.svg"
+                        <Button Grid.Column="1"
+                                   Text="🔍"
+                                   FontSize="12"
                                    BackgroundColor="Transparent"
-                                   HeightRequest="20"
-                                   WidthRequest="20"
-                                   CornerRadius="10"
+                                   TextColor="{StaticResource TextPrimary}"
                                    Clicked="OnSearchClicked"
-                                   IsVisible="False"/>
+                                   IsVisible="False"
+                                   CornerRadius="10"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
                     </Grid>
                 </Border>
                 
