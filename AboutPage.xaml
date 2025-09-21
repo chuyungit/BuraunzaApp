@@ -1,0 +1,101 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuraunzaApp.AboutPage"
+             Title="关于"
+             BackgroundColor="{StaticResource PageBackground}">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="24" VerticalOptions="Center">
+            <!-- 应用图标和标题 -->
+            <StackLayout HorizontalOptions="Center" Spacing="16">
+                <Image Source="icon.png" WidthRequest="120" HeightRequest="120"/>
+                <Label Text="iMikufans Buraunza" 
+                       FontSize="28" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource Primary}" 
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Version: Release 1.0.0" 
+                       FontSize="16" 
+                       TextColor="{StaticResource TextSecondary}" 
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <!-- 应用介绍 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="📝 应用介绍" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    <Label Text="iMikufans Buraunza是一款基于 MAUI 开发的轻量级现代浏览器，专为提供流畅的网页浏览体验而设计。" 
+                           FontSize="14" 
+                           TextColor="{StaticResource TextSecondary}" 
+                           LineBreakMode="WordWrap"/>
+                </StackLayout>
+            </Border>
+
+            <!-- 功能特性 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="✨ 功能特性" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    <StackLayout Spacing="6">
+                        <Label Text="• 流畅的网页浏览体验" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                        <Label Text="• 支持 local:// 协议访问本地文件" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                        <Label Text="• 自定义主页和搜索引擎" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                        <Label Text="• 文件下载管理" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                        <Label Text="• 隐私和安全设置" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+
+            <!-- 版权信息 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="© 版权信息" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    <Label Text="本项目由 iMikufans 技术组附属的 OneNext 小组进行开发" 
+                           FontSize="14" 
+                           TextColor="{StaticResource TextSecondary}"/>
+                    <Label Text="© 2025 iMikufans &amp; OneNext Group 保留所有权利。" 
+                           FontSize="14" 
+                           TextColor="{StaticResource TextSecondary}"/>
+                </StackLayout>
+            </Border>
+
+            <!-- 链接 -->
+            <StackLayout HorizontalOptions="Center" Spacing="12">
+                <Button Text="访问官方网站" 
+                        TextColor="White" 
+                        BackgroundColor="{StaticResource Primary}"
+                        Clicked="OnVisitWebsiteClicked"/>
+                <Button Text="查看源码" 
+                        TextColor="White" 
+                        BackgroundColor="{StaticResource Secondary}"
+                        Clicked="OnViewSourceCodeClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

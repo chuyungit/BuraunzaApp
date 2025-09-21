@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面 - Buraunza Browser</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .success {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 测试成功！</h1>
+        <p>这个HTML文件是从应用程序包内正确加载的。</p>
+        
+        <div class="success">
+            <strong>文件访问机制工作正常！</strong><br>
+            本地HTML文件已成功嵌入到应用程序包中。
+        </div>
+        
+        <p>当前时间: <span id="currentTime"></span></p>
+        <p>页面加载完成时间: <span id="loadTime"></span></p>
+        
+        <button onclick="goBack()" style="background: #0078D4; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1rem;">
+            返回主页
+        </button>
+    </div>
+
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent = now.toLocaleString('zh-CN');
+        }
+        
+        // 记录页面加载时间
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadTime = new Date();
+            document.getElementById('loadTime').textContent = loadTime.toLocaleString('zh-CN');
+            
+            // 每秒更新一次时间
+            setInterval(updateTime, 1000);
+            updateTime();
+        });
+        
+        // 返回主页
+        function goBack() {
+            window.location.href = 'default.html';
+        }
+    </script>
+</body>
+</html>

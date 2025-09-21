@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buraunza Browser - 首页</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background: #FAF9F8;
+            color: #323130;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0078D4;
+        }
+        .welcome-text {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            color: #605E5C;
+        }
+        .features {
+            background: #FFFFFF;
+            border-radius: 4px;
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #EDEBE9;
+        }
+        .feature-item {
+            margin: 12px 0;
+            font-size: 1rem;
+            color: #323130;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .link-button {
+            background: #0078D4;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+        .link-button:hover {
+            background: #106EBE;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌐 iMikufans Buraunza</div>
+        <div class="welcome-text">欢迎使用 iMikufans Buraunza 浏览器</div>
+        
+        <div class="features">
+            <div class="feature-item">🚀 基于 .NET MAUI 开发</div>
+            <div class="feature-item">🎨 Fluent UI 界面设计</div>
+            <div class="feature-item">💻 支持 Windows 和 macOS 平台</div>
+            <div class="feature-item">🔒 安全可靠的浏览体验</div>
+        </div>
+
+        <div class="quick-links">
+            <button class="link-button" onclick="window.location.href='local://default.html'">主页</button>
+            <button class="link-button" onclick="window.location.href='https://www.bing.com'">必应</button>
+            <button class="link-button" onclick="window.location.href='https://www.github.com'">GitHub</button>
+            <button class="link-button" onclick="window.location.href='https://www.microsoft.com'">Microsoft</button>
+            <button class="link-button" onclick="window.location.href='https://www.apple.com'">Apple</button>
+            <button class="link-button" onclick="window.location.href='local://test.html'">测试本地文件</button>
+        </div>
+
+        <div style="margin-top: 24px; padding: 16px; background: #F3F2F1; border-radius: 4px; border-left: 4px solid #0078D4;">
+            <h3 style="margin-top: 0; color: #323130;">🌐 本地协议测试</h3>
+            <p style="margin-bottom: 12px; color: #605E5C;">尝试在地址栏输入以下local://协议URL：</p>
+            <div style="font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 0.9rem;">
+                <div style="background: white; padding: 8px 12px; margin: 4px 0; border-radius: 2px; border: 1px solid #EDEBE9;">
+                    <span style="color: #0078D4;">local://</span> - 访问主页
+                </div>
+                <div style="background: white; padding: 8px 12px; margin: 4px 0; border-radius: 2px; border: 1px solid #EDEBE9;">
+                    <span style="color: #0078D4;">local://test.html</span> - 访问测试页面
+                </div>
+                <div style="background: white; padding: 8px 12px; margin: 4px 0; border-radius: 2px; border: 1px solid #EDEBE9;">
+                    <span style="color: #0078D4;">local://default.html</span> - 访问默认页面
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 简单的页面交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.feature-item');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

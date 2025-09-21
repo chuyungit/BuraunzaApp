@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BuraunzaApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BuraunzaApp"
+    Title="BuraunzaApp"
+    Shell.FlyoutBehavior="Disabled">
+
+    <!-- 底部标签栏导航 -->
+    <TabBar>
+        <Tab Title="主页" Icon="home.svg">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        
+        <Tab Title="设置" Icon="settings.svg">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:SettingsPage}"
+                Route="SettingsPage" />
+        </Tab>
+        
+        <Tab Title="关于" Icon="info.svg">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:AboutPage}"
+                Route="AboutPage" />
+        </Tab>
+    </TabBar>
+
+</Shell>

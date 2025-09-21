@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
+
+    <Color x:Key="Primary">#512BD4</Color>
+    <Color x:Key="PrimaryDark">#ac99ea</Color>
+    <Color x:Key="PrimaryDarkText">#242424</Color>
+    <Color x:Key="Secondary">#DFD8F7</Color>
+    <Color x:Key="SecondaryDarkText">#9880e5</Color>
+    <Color x:Key="Tertiary">#2B0B98</Color>
+
+    <Color x:Key="White">White</Color>
+    <Color x:Key="Black">Black</Color>
+    <Color x:Key="Magenta">#D600AA</Color>
+    <Color x:Key="MidnightBlue">#190649</Color>
+    <Color x:Key="OffBlack">#1f1f1f</Color>
+
+    <Color x:Key="Gray100">#E1E1E1</Color>
+    <Color x:Key="Gray200">#C8C8C8</Color>
+    <Color x:Key="Gray300">#ACACAC</Color>
+    <Color x:Key="Gray400">#919191</Color>
+    <Color x:Key="Gray500">#6E6E6E</Color>
+    <Color x:Key="Gray600">#404040</Color>
+    <Color x:Key="Gray900">#212121</Color>
+    <Color x:Key="Gray950">#141414</Color>
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
+
+    <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}"/>
+    <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}"/>
+    <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray300}"/>
+    <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray400}"/>
+    <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}"/>
+    <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
+    <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <!-- Fluent UI 标准颜色 -->
+    <Color x:Key="AccentLight">#0078D4</Color>
+    <Color x:Key="AccentDark">#0086F0</Color>
+    <Color x:Key="Surface">#FFFFFF</Color>
+    <Color x:Key="SurfaceAlt">#F3F2F1</Color>
+    <Color x:Key="CardBackground">#FFFFFF</Color>
+    <Color x:Key="CardStroke">#E1DFDD</Color>
+    <Color x:Key="ToolbarBackground">#F3F2F1</Color>
+    <Color x:Key="HoverLight">#F3F2F1</Color>
+    <Color x:Key="PressedLight">#EDEBE9</Color>
+    
+    <!-- Chrome风格颜色 -->
+    <Color x:Key="ChromeGray100">#F1F3F4</Color>
+    <Color x:Key="ChromeGray200">#E8EAED</Color>
+    <Color x:Key="ChromeGray300">#DADCE0</Color>
+    <Color x:Key="ChromeBlue">#1A73E8</Color>
+    <Color x:Key="ChromeBlueHover">#1565C0</Color>
+    
+    <!-- 设置页面专用颜色 -->
+    <Color x:Key="PageBackground">#FAF9F8</Color>
+    <Color x:Key="Border">#EDEBE9</Color>
+    <Color x:Key="TextPrimary">#323130</Color>
+    <Color x:Key="TextSecondary">#605E5C</Color>
+    <Color x:Key="TextTertiary">#A19F9D</Color>
+    <Color x:Key="Success">#107C10</Color>
+    <Color x:Key="Warning">#D83B01</Color>
+    <Color x:Key="Error">#D13438</Color>
+    
+    <!-- Fluent UI 画刷 -->
+    <SolidColorBrush x:Key="AccentLightBrush" Color="{StaticResource AccentLight}"/>
+    <SolidColorBrush x:Key="AccentDarkBrush" Color="{StaticResource AccentDark}"/>
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
+    <SolidColorBrush x:Key="SurfaceAltBrush" Color="{StaticResource SurfaceAlt}"/>
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource CardBackground}"/>
+    <SolidColorBrush x:Key="CardStrokeBrush" Color="{StaticResource CardStroke}"/>
+    <SolidColorBrush x:Key="ToolbarBackgroundBrush" Color="{StaticResource ToolbarBackground}"/>
+    <SolidColorBrush x:Key="HoverLightBrush" Color="{StaticResource HoverLight}"/>
+    <SolidColorBrush x:Key="PressedLightBrush" Color="{StaticResource PressedLight}"/>
+    
+    <!-- Chrome风格画刷 -->
+    <SolidColorBrush x:Key="ChromeGray100Brush" Color="{StaticResource ChromeGray100}"/>
+    <SolidColorBrush x:Key="ChromeGray200Brush" Color="{StaticResource ChromeGray200}"/>
+    <SolidColorBrush x:Key="ChromeGray300Brush" Color="{StaticResource ChromeGray300}"/>
+    <SolidColorBrush x:Key="ChromeBlueBrush" Color="{StaticResource ChromeBlue}"/>
+    <SolidColorBrush x:Key="ChromeBlueHoverBrush" Color="{StaticResource ChromeBlueHover}"/>
+    
+    <SolidColorBrush x:Key="PageBackgroundBrush" Color="{StaticResource PageBackground}"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource Border}"/>
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimary}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondary}"/>
+    <SolidColorBrush x:Key="TextTertiaryBrush" Color="{StaticResource TextTertiary}"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource Success}"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource Warning}"/>
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource Error}"/>
+
+    <!-- 嵌入式主页HTML内容 -->
+    <x:String x:Key="EmbeddedHomePageHtml">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="zh-CN"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Buraunza Browser - 首页&lt;/title&gt;
+            &lt;style&gt;
+                body {
+                    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+                    margin: 0;
+                    padding: 40px 20px;
+                    background: #FAF9F8;
+                    color: #323130;
+                    min-height: 100vh;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                .logo {
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    margin-bottom: 16px;
+                    color: #0078D4;
+                }
+                .welcome-text {
+                    font-size: 1.25rem;
+                    margin-bottom: 32px;
+                    color: #605E5C;
+                }
+                .features {
+                    background: #FFFFFF;
+                    border-radius: 4px;
+                    padding: 24px;
+                    margin: 24px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    border: 1px solid #EDEBE9;
+                }
+                .feature-item {
+                    margin: 12px 0;
+                    font-size: 1rem;
+                    color: #323130;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                }
+                .quick-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 12px;
+                    margin-top: 32px;
+                    flex-wrap: wrap;
+                }
+                .link-button {
+                    background: #0078D4;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    color: white;
+                    text-decoration: none;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    transition: background-color 0.2s ease;
+                }
+                .link-button:hover {
+                    background: #106EBE;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="logo"&gt;🌐 iMikufans Buraunza&lt;/div&gt;
+                &lt;div class="welcome-text"&gt;欢迎使用 iMikufans Buraunza 浏览器&lt;/div&gt;
+                
+                &lt;div class="features"&gt;
+                    &lt;div class="feature-item"&gt;🚀 基于 .NET MAUI 开发&lt;/div&gt;
+                    &lt;div class="feature-item"&gt;🎨 Fluent UI 界面设计&lt;/div&gt;
+                    &lt;div class="feature-item"&gt;💻 支持 Windows 和 macOS 平台&lt;/div&gt;
+                    &lt;div class="feature-item"&gt;🔒 安全可靠的浏览体验&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="quick-links"&gt;
+                    &lt;button class="link-button" onclick="window.location.href='local://default.html'"&gt;主页&lt;/button&gt;
+                    &lt;button class="link-button" onclick="window.location.href='https://www.bing.com'"&gt;必应&lt;/button&gt;
+                    &lt;button class="link-button" onclick="window.location.href='https://www.github.com'"&gt;GitHub&lt;/button&gt;
+                    &lt;button class="link-button" onclick="window.location.href='https://www.microsoft.com'"&gt;Microsoft&lt;/button&gt;
+                    &lt;button class="link-button" onclick="window.location.href='https://www.apple.com'"&gt;Apple&lt;/button&gt;
+                    &lt;button class="link-button" onclick="window.location.href='local://test.html'"&gt;测试本地文件&lt;/button&gt;
+                &lt;/div&gt;
+
+                &lt;div style="margin-top: 24px; padding: 16px; background: #F3F2F1; border-radius: 4px; border-left: 4px solid #0078D4;"&gt;
+                    &lt;h3 style="margin-top: 0; color: #323130;"&gt;🌐 本地协议测试&lt;/h3&gt;
+                    &lt;p style="margin-bottom: 12px; color: #605E5C;"&gt;尝试在地址栏输入以下local://协议URL：&lt;/p&gt;
+                    &lt;div style="font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 0.9rem;"&gt;
+                        &lt;div style="background: white; padding: 8px 12px; margin: 4px 0; border-radius: 2px; border: 1px solid #EDEBE9;"&gt;
+                            &lt;span style="color: #0078D4;"&gt;local://&lt;/span&gt; - 访问主页
+                        &lt;/div&gt;
+                        &lt;div style="background: white; padding: 8px 12px; margin: 4px 0; border-radius: 2px; border: 1px solid #EDEBE9;"&gt;
+                            &lt;span style="color: #0078D4;"&gt;local://test.html&lt;/span&gt; - 访问测试页面
+                        &lt;/div&gt;
+                        &lt;div style="background: white; padding: 8px 12px; margin: 4px 0; border-radius: 2px; border: 1px solid #EDEBE9;"&gt;
+                            &lt;span style="color: #0078D4;"&gt;local://default.html&lt;/span&gt; - 访问默认页面
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;script&gt;
+                // 简单的页面交互效果
+                document.addEventListener('DOMContentLoaded', function() {
+                    const elements = document.querySelectorAll('.feature-item');
+                    elements.forEach((el, index) =&gt; {
+                        setTimeout(() =&gt; {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                });
+            &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </x:String>
+
+</ResourceDictionary>

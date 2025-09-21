@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuraunzaApp.MainPage"
+             Title="Buraunza Browser">
+
+    <Grid RowDefinitions="Auto,*,Auto" Background="{StaticResource SurfaceAltBrush}">
+        <!-- 导航工具栏 - Chrome风格设计 -->
+        <Border Grid.Row="0"
+                Background="{StaticResource SurfaceBrush}"
+                Stroke="{StaticResource CardStrokeBrush}"
+                StrokeThickness="1"
+                Padding="0,8,12,8">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0,0,12,12"/>
+            </Border.StrokeShape>
+            
+            <Grid ColumnDefinitions="Auto,Auto,*,Auto,Auto,Auto" 
+                  Padding="12,0,0,0"
+                  Row="0">
+                
+                <!-- 后退按钮 - Fluent UI 风格 -->
+                <Border Grid.Column="0"
+                        Margin="0,0,4,0"
+                        HeightRequest="32"
+                        WidthRequest="32"
+                        Background="Transparent"
+                        Stroke="{StaticResource ChromeGray300Brush}"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8"/>
+                    </Border.StrokeShape>
+                    <Button x:Name="BackButton"
+                            Text="◀"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            TextColor="{StaticResource TextPrimary}"
+                            Clicked="OnBackClicked"
+                            IsEnabled="False"
+                            CornerRadius="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                </Border>
+                
+                <!-- 前进按钮 - Fluent UI 风格 -->
+                <Border Grid.Column="1"
+                        Margin="0,0,12,0"
+                        HeightRequest="32"
+                        WidthRequest="32"
+                        Background="Transparent"
+                        Stroke="{StaticResource ChromeGray300Brush}"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8"/>
+                    </Border.StrokeShape>
+                    <Button x:Name="ForwardButton"
+                            Text="▶"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            TextColor="{StaticResource TextPrimary}"
+                            Clicked="OnForwardClicked"
+                            IsEnabled="False"
+                            CornerRadius="8"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                </Border>
+                
+                <!-- 地址栏 - Chrome风格圆角设计 -->
+                <Border Grid.Column="2"
+                        Margin="0,0,12,0"
+                        HeightRequest="36"
+                        Background="{StaticResource ChromeGray100Brush}"
+                        Stroke="{StaticResource ChromeGray300Brush}"
+                        StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18"/>
+                    </Border.StrokeShape>
+                    <Grid ColumnDefinitions="*,Auto" Padding="16,0">
+                        <Entry x:Name="UrlEntry"
+                               Grid.Column="0"
+                               Placeholder="搜索Google或输入网址"
+                               BackgroundColor="Transparent"
+                               TextColor="{StaticResource TextPrimary}"
+                               ClearButtonVisibility="WhileEditing"
+                               ReturnType="Go"
+                               Completed="OnUrlEntered"
+                               FontSize="14"/>
+                        <ImageButton Grid.Column="1"
+                                   Source="search.svg"
+                                   BackgroundColor="Transparent"
+                                   HeightRequest="20"
+                                   WidthRequest="20"
+                                   CornerRadius="10"
+                                   Clicked="OnSearchClicked"
+                                   IsVisible="False"/>
+                    </Grid>
+                </Border>
+                
+                <!-- 操作按钮组 - Fluent UI 圆形按钮 -->
+                <StackLayout Grid.Column="3"
+                             Orientation="Horizontal"
+                             Spacing="8">
+                    <!-- 刷新按钮 -->
+                    <Border HeightRequest="32"
+                                WidthRequest="32"
+                                Background="Transparent"
+                                Stroke="{StaticResource ChromeGray300Brush}"
+                                StrokeThickness="1"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16"/>
+                        </Border.StrokeShape>
+                        <Button x:Name="RefreshButton"
+                                Text="🔄"
+                                FontSize="14"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource TextPrimary}"
+                                Clicked="OnRefreshClicked"
+                                CornerRadius="16"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                    </Border>
+                    
+                    <!-- 主页按钮 -->
+                    <Border HeightRequest="32"
+                            WidthRequest="32"
+                            Background="Transparent"
+                            Stroke="{StaticResource ChromeGray300Brush}"
+                            StrokeThickness="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16"/>
+                        </Border.StrokeShape>
+                        <Button x:Name="HomeButton"
+                                Text="🏠"
+                                FontSize="14"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource TextPrimary}"
+                                Clicked="OnHomeClicked"
+                                CornerRadius="16"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                    </Border>
+                    
+                    <!-- 下载按钮 -->
+                    <Border HeightRequest="32"
+                            WidthRequest="32"
+                            Background="Transparent"
+                            Stroke="{StaticResource ChromeGray300Brush}"
+                            StrokeThickness="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16"/>
+                        </Border.StrokeShape>
+                        <Button x:Name="DownloadButton"
+                                Text="⬇️"
+                                FontSize="14"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource TextPrimary}"
+                                Clicked="OnDownloadClicked"
+                                CornerRadius="16"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                    </Border>
+
+                    <!-- 设置按钮 -->
+                    <Border HeightRequest="32"
+                            WidthRequest="32"
+                            Background="Transparent"
+                            Stroke="{StaticResource ChromeGray300Brush}"
+                            StrokeThickness="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16"/>
+                        </Border.StrokeShape>
+                        <Button x:Name="SettingsButton"
+                                Text="⚙️"
+                                FontSize="14"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource TextPrimary}"
+                                Clicked="OnSettingsClicked"
+                                CornerRadius="16"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                    </Border>
+                </StackLayout>
+            </Grid>
+        </Border>
+
+        <!-- WebView 浏览器区域 -->
+        <Border Grid.Row="1"
+                Margin="12,0,12,12"
+                Background="White"
+                Stroke="{StaticResource ChromeGray300Brush}"
+                StrokeThickness="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+            <WebView x:Name="Browser"
+                     Navigating="OnNavigating"
+                     Navigated="OnNavigated"
+                     Margin="0"/>
+        </Border>
+
+        <!-- 状态栏 - Fluent UI 现代风格 -->
+        <Border Grid.Row="2"
+                Background="{StaticResource SurfaceBrush}"
+                Stroke="{StaticResource CardStrokeBrush}"
+                StrokeThickness="1"
+                HeightRequest="28">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12,12,0,0"/>
+            </Border.StrokeShape>
+            <Label x:Name="StatusLabel"
+                   Text="就绪"
+                   TextColor="{StaticResource TextSecondary}"
+                   FontSize="12"
+                   HorizontalOptions="Start"
+                   Margin="16,6"
+                   VerticalOptions="Center"/>
+        </Border>
+    </Grid>
+
+</ContentPage>

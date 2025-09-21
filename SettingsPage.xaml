@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuraunzaApp.SettingsPage"
+             Title="设置"
+             BackgroundColor="{StaticResource PageBackground}">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="24">
+            
+            <!-- 标题 -->
+            <Label Text="🌐 浏览器设置" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="{StaticResource Primary}"/>
+            
+            <!-- 常规设置 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="📋 常规设置" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    
+                    <!-- 主页设置 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="主页URL" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Entry x:Name="HomePageEntry" 
+                               Placeholder="输入主页URL" 
+                               Text="local://default.html"
+                               Completed="OnHomePageChanged"/>
+                    </StackLayout>
+                    
+                    <!-- 搜索引擎设置 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="默认搜索引擎" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Picker x:Name="SearchEnginePicker" 
+                                SelectedIndexChanged="OnSearchEngineChanged">
+                            <Picker.Items>
+                                <x:String>必应</x:String>
+                                <x:String>Google</x:String>
+                                <x:String>百度</x:String>
+                                <x:String>DuckDuckGo</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    
+                    <!-- 启动时行为 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="启动时行为" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Picker x:Name="StartupBehaviorPicker" 
+                                SelectedIndexChanged="OnStartupBehaviorChanged">
+                            <Picker.Items>
+                                <x:String>打开主页</x:String>
+                                <x:String>打开新标签页</x:String>
+                                <x:String>恢复上次会话</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+            
+            <!-- 隐私与安全 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="🔒 隐私与安全" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    
+                    <!-- Cookie设置 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="Cookie设置" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Picker x:Name="CookiePolicyPicker" 
+                                SelectedIndexChanged="OnCookiePolicyChanged">
+                            <Picker.Items>
+                                <x:String>允许所有Cookie</x:String>
+                                <x:String>仅阻止第三方Cookie</x:String>
+                                <x:String>阻止所有Cookie</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    
+                    <!-- 跟踪保护 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="TrackingProtectionSwitch" 
+                                IsToggled="true"
+                                Toggled="OnTrackingProtectionToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="启用跟踪保护" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                    
+                    <!-- 清除浏览数据 -->
+                    <Button Text="🗑️ 清除浏览数据" 
+                            Clicked="OnClearDataClicked"
+                            BackgroundColor="{StaticResource Error}"
+                            TextColor="White"
+                            CornerRadius="4"/>
+                </StackLayout>
+            </Border>
+            
+            <!-- 外观设置 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="🎨 外观设置" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    
+                    <!-- 主题设置 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="主题模式" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Picker x:Name="ThemePicker" 
+                                SelectedIndexChanged="OnThemeChanged">
+                            <Picker.Items>
+                                <x:String>跟随系统</x:String>
+                                <x:String>浅色</x:String>
+                                <x:String>深色</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    
+                    <!-- 字体大小 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="默认字体大小" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Slider x:Name="FontSizeSlider" 
+                                Minimum="12" 
+                                Maximum="24" 
+                                Value="16"
+                                ValueChanged="OnFontSizeChanged"/>
+                        <Label x:Name="FontSizeLabel" 
+                               Text="16px" 
+                               FontSize="12" 
+                               TextColor="{StaticResource TextTertiary}"
+                               HorizontalOptions="End"/>
+                    </StackLayout>
+                    
+                    <!-- 缩放级别 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="默认缩放级别" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Slider x:Name="ZoomLevelSlider" 
+                                Minimum="0.5" 
+                                Maximum="2.0" 
+                                Value="1.0"
+                                ValueChanged="OnZoomLevelChanged"/>
+                        <Label x:Name="ZoomLevelLabel" 
+                               Text="100%" 
+                               FontSize="12" 
+                               TextColor="{StaticResource TextTertiary}"
+                               HorizontalOptions="End"/>
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+            
+            <!-- 下载设置 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="📥 下载设置" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    
+                    <!-- 默认下载目录 -->
+                    <StackLayout Spacing="8">
+                        <Label Text="默认下载目录" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                        <Entry x:Name="DownloadDirectoryEntry" 
+                               TextChanged="OnDownloadDirectoryChanged"
+                               Placeholder="系统默认下载目录"/>
+                        <Button Text="📁 选择下载目录" 
+                                Clicked="OnSelectDownloadDirectoryClicked"
+                                BackgroundColor="{StaticResource Secondary}"
+                                TextColor="White"
+                                CornerRadius="4"/>
+                    </StackLayout>
+                    
+                    <!-- 下载确认 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="DownloadConfirmationSwitch" 
+                                IsToggled="true"
+                                Toggled="OnDownloadConfirmationToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="下载前确认" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                    
+                    <!-- 自动打开下载 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="AutoOpenDownloadsSwitch" 
+                                IsToggled="false"
+                                Toggled="OnAutoOpenDownloadsToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="下载完成后自动打开文件" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+            
+            <!-- 高级设置 -->
+            <Border BackgroundColor="White" 
+                    Stroke="{StaticResource Border}" 
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <StackLayout Spacing="12">
+                    <Label Text="⚙️ 高级设置" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource TextPrimary}"/>
+                    
+                    <!-- JavaScript设置 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="JavaScriptSwitch" 
+                                IsToggled="true"
+                                Toggled="OnJavaScriptToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="启用JavaScript" 
+                               FontSize="14" 
+                               TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                    
+                    <!-- 弹出窗口阻止 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="PopupBlockingSwitch" 
+                                IsToggled="true"
+                                Toggled="OnPopupBlockingToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="阻止弹出窗口" 
+                               FontSize="14" 
+                           TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                    
+                    <!-- 硬件加速 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="HardwareAccelerationSwitch" 
+                                IsToggled="true"
+                                Toggled="OnHardwareAccelerationToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="启用硬件加速" 
+                               FontSize="14" 
+                           TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                    
+                    <!-- 开发者工具 -->
+                    <StackLayout Spacing="8">
+                        <Switch x:Name="DevToolsSwitch" 
+                                IsToggled="false"
+                                Toggled="OnDevToolsToggled"
+                                HorizontalOptions="Start"/>
+                        <Label Text="启用开发者工具" 
+                               FontSize="14" 
+                           TextColor="{StaticResource TextSecondary}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+            
+            <!-- 保存按钮 -->
+            <Button Text="💾 保存设置" 
+                    Clicked="OnSaveSettingsClicked"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    CornerRadius="4"
+                    FontSize="16"/>
+            
+            <!-- 重置按钮 -->
+            <Button Text="🔄 恢复默认设置" 
+                    Clicked="OnResetSettingsClicked"
+                    BackgroundColor="{StaticResource Secondary}"
+                    TextColor="White"
+                    CornerRadius="4"/>
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
